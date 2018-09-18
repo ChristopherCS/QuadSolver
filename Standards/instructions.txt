@@ -1,0 +1,41 @@
+Solve the Quadratic Equation.
+Call it Quad?
+
+Input looks like:
+Input A, B, C: _ _ _ ->(enter)
+[Prints Out Result]
+x = (-b +- sqrt(b^2-4ac))/2a : for ax^2+bx+c=0
+
+Input single precision (ieee 32 bit precision, normalized).
+Output Single Precision (ieee 32 bit precision, normalized).
+
+Written in Gnu C or R. 
+Current Gnu C supports quad precision. 
+
+Runs on linux. 
+
+Look at the Table Makers Dilemma.
+
+Should have a "Standards" Directory with:
+Must include a document about version control. 
+Must include a programming standard document.
+Must include a build tool standard.
+Must include a unit testing standard.
+
+Should have a "Legal" Directory with:
+Documentation that an NDA is (or is not) required.
+Licence File.
+Documentation about who "Owns" this file. (only needs to be open source).
+
+Should have a "Stories" Directory with:
+A Readme if there are subdirectories, this directory will have many directories.
+IEEE FLoating Points
+Input Directory
+Testing Directory
+Spikes Directory 
+
+Should have a SRC directory (where all the source goes)
+
+May have a Build directory.
+
+May have a test directory.
