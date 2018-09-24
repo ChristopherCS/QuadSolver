@@ -39,3 +39,13 @@ Should have a SRC directory (where all the source goes)
 May have a Build directory.
 
 May have a test directory.
+
+
+
+**New Notes from Sep 24, 2018**
+Tasks for the Program:
+  -> Read an Input String 
+  -> Validate Input: Make sure the input string contains a, b, and c as valid single precision input numbers.
+     (Watch out for inf, nan, etc.). 
+  -> Output String: Output the input parameters
+  -> A "my_sqrt" function as a sort of interface to the sqare root function in the c math library. 
