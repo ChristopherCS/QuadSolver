@@ -12,7 +12,7 @@ The Program will verify that the input is 3 32 bit IEEE floating point numbers. 
 ### My Square Root
 The program will implement it's own square root function which documents/reports every call to the square root function.
 
-### Solve the Quadratic Equastion
+### Solve the Quadratic Equation
 This function of the program takes the already verified input from the program and calculates the result for the quadratic equation. It is important to check, before computing, that the discriminant is not negative. If the discriminant is negative the program must report, "Result is Non-Real". Otherwise the result of the calculation is returned as a 32 bit IEEE single precision floating point value.
 
 ### Testing
