@@ -1,7 +1,7 @@
 # Stories
 
 ## Documentation
-We will create a structure of documentation based on the Quadratic Solver that we will implement.
+We will create a structure of documentation that will assist us for the Quadratic Solver that we will implement.
 
 We will include:
 	TPS Reports
