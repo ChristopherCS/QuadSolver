@@ -1,0 +1,1 @@
+This directory will serve as the home of files to do both functional and unit testing.
