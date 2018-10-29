@@ -8,5 +8,8 @@
 int mySquareRoot(double input, double *output); 
 int solve(float a, float b, float c);
 void initLogfile(void);
-void logMessage(char *message)
+void logMessage(char *message);
+
+
+
 #endif
