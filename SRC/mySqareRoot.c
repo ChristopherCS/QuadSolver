@@ -4,7 +4,7 @@
 // When Called, mySquareRoot Logs that the square root function has been called. 
 int mySquareRoot(double input, double *output){
 	int ret = 0;
-	char *logMessage = (char *)calloc(sizeof(char), 256);
+	char *logString = (char *)calloc(sizeof(char), 256);
 
 	if(input < 0){
 		ret = 1;
@@ -12,10 +12,10 @@ int mySquareRoot(double input, double *output){
 		*output = sqrt(input);
 
 		//Creates the Log Message with sprintf.
-		sprintf(logMessage, "Function \"mySquareRoot\" Called with input: %f, and output: %f", input, *output);
-		log(logMessage);
+		sprintf(logString, "Function \"mySquareRoot\" Called with input: %f, and output: %f", input, *output);
+		logMessage(logString);
 	}
 
-	free(logMessage);
+	free(logString);
 	return(ret);
 }

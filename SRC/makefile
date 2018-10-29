@@ -2,11 +2,15 @@ CC = gcc
 CFLAGS = -g -Wall -pedantic
 
 quadSolver : quadSolver.o mySquareRoot.o 
-	${CC} ${CFLAGS} -o qs quadSolver.o mySquareRoot.o -lm
+	${CC} ${CFLAGS} -o qs quadSolver.o mySquareRoot.o solver.o logger.o -lm
 
 quadSolver.o : mySquareRoot.o
 
 mySquareRoot.o : quadSolver.h
+
+solver.o : quadSolver.h
+
+logger.o : quadSolver.h
 
 
 .PHONY : clean remake

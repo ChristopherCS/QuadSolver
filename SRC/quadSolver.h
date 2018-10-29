@@ -6,6 +6,7 @@
 
 
 int mySquareRoot(double input, double *output); 
-int log(char *logMessage);
 int solve(float a, float b, float c);
+void initLogfile(void);
+void logMessage(char *message)
 #endif
