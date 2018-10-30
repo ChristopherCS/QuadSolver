@@ -1,8 +1,9 @@
 CC = gcc
 CFLAGS = -g -Wall -pedantic
+LIBS = -lm
 
 quadSolver : quadSolver.o mySquareRoot.o solver.o logger.o
-	${CC} ${CFLAGS} -o qs quadSolver.o mySquareRoot.o solver.o logger.o -lm
+	${CC} ${CFLAGS} -o qs quadSolver.o mySquareRoot.o solver.o logger.o ${LIBS}
 
 quadSolver.o : mySquareRoot.o logger.o solver.o
 
