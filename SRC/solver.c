@@ -28,7 +28,7 @@ int solve(float a, float b, float c, int *nRoots, float *result[2]){
 			*result[0] = (float)(-B + sqroot / 2*A);
 			*result[1] = (float)(-B - sqroot / 2*A);
 		//Test if the two roots are within rounding error of each other. If so, only one root. Otherwise two roots.
-		if(fabs(*result[0] - *result[1])/ (fabs(*result[0])+fabs(*result[1])) > 10*dmacheps){
+		if(fabs(*result[0] - *result[1])/ (fabs(*result[0])+fabs(*result[1])) < 10*dmacheps){
 			*nRoots = 1;
 		}else *nRoots = 2;
 			sprintf(logString, "Roots are: %.8f, %.8f\n", (float)R1, (float)R2);
@@ -40,6 +40,10 @@ int solve(float a, float b, float c, int *nRoots, float *result[2]){
 	return(ret);
 }
 
+
+// This Method of Finding The Machine Epsilon Delta is only slightly modified
+// from the original version which was written by John Kapenga. That original code
+// Can be found in this program at: Test->cunit->cunit.c line:12. 
 double computeDMachEps(void){
 	double dm, dmacheps = 0.5;
 	

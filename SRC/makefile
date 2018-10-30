@@ -1,10 +1,10 @@
 CC = gcc
 CFLAGS = -g -Wall -pedantic
 
-quadSolver : quadSolver.o mySquareRoot.o 
+quadSolver : quadSolver.o mySquareRoot.o solver.o logger.o
 	${CC} ${CFLAGS} -o qs quadSolver.o mySquareRoot.o solver.o logger.o -lm
 
-quadSolver.o : mySquareRoot.o
+quadSolver.o : mySquareRoot.o logger.o solver.o
 
 mySquareRoot.o : quadSolver.h
 
