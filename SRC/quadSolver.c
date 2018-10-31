@@ -16,7 +16,7 @@
 int main(int argc, char **argv){
 
 	//Get Input
-
+	printf("Arg C is: %d", argc);
 	//Validate Input
 
 	//Calculate X's
