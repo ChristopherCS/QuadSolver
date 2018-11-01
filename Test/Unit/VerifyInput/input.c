@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <string.h>
-#include "quadSolver.h"
+// to validate the values from the user input
+int validate (char val[]);
 
-int input(int argc, char *argv[], char *result)
+int main(int argc, char *argv[])
 {
    
    int argc_counter;
@@ -20,11 +21,14 @@ int input(int argc, char *argv[], char *result)
 		}
   	}	
 
-   	printf("%s\n",values);   	
+   	printf("%s\n",values);
+   	validation = validate(values);
+   	
    }else{
     	printf("Enter the values for A, B, C:\n" );
    		scanf("%[^\n]%*c",&values);  // or we can use fgets
    		//printf("The values are: %s\n", values);
+   		validation = validate(values);
    		//printf("%d\n",validation);
     }
    
@@ -32,3 +36,17 @@ int input(int argc, char *argv[], char *result)
 
 }
 
+// to validate the values from the user input
+int validate (char val[]){
+	printf("%s\n",val);
+	char *token;
+	const char s[2] = " ";
+	token = strtok(val, s);
+	// printf("%s\n",val);
+	while(token != NULL){		
+		printf("%s\n", token);
+		token = strtok(val, s);
+	}
+	return 0;
+
+}
