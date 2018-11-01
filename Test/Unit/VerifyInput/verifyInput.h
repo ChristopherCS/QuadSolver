@@ -7,6 +7,7 @@
 
 #include "cunit.h"
 #include "quadSolver.h"
+#include <math.h>
 
 int testValidation();
 int testInputCommandLine();

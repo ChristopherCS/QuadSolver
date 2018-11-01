@@ -6,19 +6,19 @@
 
 CFLAGS= -Wall -pedantic -std=c99
 CC= gcc
-LIBS= 
+LIBS= -lm
 
 
 verifyInput : verifyInput.o 
-	${CC} ${CFLAGS} -o verifyInput cunit.o input.o verify.o verifyInput.o ${LIBS}
+	${CC} ${CFLAGS} -o verifyInput cunit.o input.o validate.o verifyInput.o ${LIBS}
 
-verifyInput.o : verifyInput.h cunit.o input.o verify.o
+verifyInput.o : verifyInput.h cunit.o input.o validate.o
 
 cunit.o : cunit.h
 
 input.o : quadSolver.h
 
-verify.o : quadSolver.h
+validate.o : quadSolver.h
 
 
 test : verifyInput.o 
@@ -28,8 +28,8 @@ test : verifyInput.o
 .PHONY : prepTest clean
 
 clean : 
-	rm *.o core verifyInput *.log
+	rm *.o verifyInput
 
 prepTest :
-	cp ../../../SRC/input.c ../../../SRC/verify.c ../../../SRC/quadSolver.h ./
+	cp ../../../SRC/input.c ../../../SRC/validate.c ../../../SRC/quadSolver.h ./
 	make verifyInput

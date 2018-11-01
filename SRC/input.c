@@ -21,7 +21,7 @@ int input(int argc, char *argv[], char *result)
   	}	
 
    	printf("%s\n",values);   	
-   }else{
+   }else if(argc == 1){
     	printf("Enter the values for A, B, C:\n" );
    		scanf("%[^\n]%*c",&values);  // or we can use fgets
    		//printf("The values are: %s\n", values);
