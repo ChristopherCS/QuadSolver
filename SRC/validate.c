@@ -11,7 +11,7 @@ int validate (char *val, double *res){
   }
   res[0] = a;
   res[1] = b;
-  res[3] = c;
+  res[2] = c;
   printf("A is: %f\n", a);
   printf("B is: %f\n", b);
   printf("C is: %f\n", c);
