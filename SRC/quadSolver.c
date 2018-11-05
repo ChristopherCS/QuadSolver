@@ -21,12 +21,14 @@ int main(int argc, char *argv[]){
 	//Get Input
 	ret = input(argc, argv, values );
 	// test ret for failure
-	// if(ret != 0){
-	// 	// handle error
-	// }
+	if(ret != 0){
+	 	printf("Please enter 3 inputs for A B C \n" );
+	}
 	//Validate Input
-	printf("The values are from main: %s\n", values);
 	ret = validate(values, result);
+	if(ret != 0){
+	 	printf("Please enter valide values \n" );
+	}
 	//Calculate X's
 
 	//Output X's

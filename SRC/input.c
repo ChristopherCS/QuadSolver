@@ -18,14 +18,17 @@ int input(int argc, char *argv[], char *values) //char *result)
         strncat(values, " ", 1);
       }
     } 
-
+    return 0;
     //printf("The values are in input: %s\n", values); 
-   }else{
+   }else if(argc == 1){
       printf("Enter the values for A, B, C:\n" );
       scanf("%[^\n]%*c",values);  // or we can use fgets, difference between value , &value
       //printf("The values are: %s\n", values);
-    }
+      return 0;
+    }//
+
+    printf("Wrong amount of arguments. Expecting 3 floating numbers.");
    
-   return 0;
+   return 1;
 
 }
