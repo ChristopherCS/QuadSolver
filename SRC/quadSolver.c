@@ -13,12 +13,22 @@
 #include "quadSolver.h"
 
 
-int main(int argc, char **argv){
-
+int main(int argc, char *argv[]){
+	int ret;
+	char values [256] = "";
+   	//int validation = 0;
+   	double result [3];
 	//Get Input
-	printf("Arg C is: %d", argc);
+	ret = input(argc, argv, values );
+	// test ret for failure
+	if(ret != 0){
+	 	printf("Please enter 3 inputs for A B C \n" );
+	}
 	//Validate Input
-
+	ret = validate(values, result);
+	if(ret != 0){
+	 	printf("Please enter valide values \n" );
+	}
 	//Calculate X's
 
 	//Output X's
