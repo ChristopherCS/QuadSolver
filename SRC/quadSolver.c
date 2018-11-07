@@ -17,7 +17,7 @@ int main(int argc, char *argv[]){
 	int ret = 0;
 	char values [256] = "";
  	double result [3];
-	double roots[2];
+	double roots[2] = {0, 0};
 	int nRoots;
 
 	//Get Input
@@ -32,14 +32,14 @@ int main(int argc, char *argv[]){
 	}
 	//Calculate X's (If there haven't been any errors yet)
 	if(ret == 0){
-		ret += solve(result[0], result[1], result[2], &nRoots,(double **) &roots);
+		ret += solve(result[0], result[1], result[2], &nRoots,(double *)roots);
 	}
 	//Output X's (If No Errors)
 	if(ret == 0){
 		if(nRoots == 1){
-			printf("There is 1 Root. It is %7f\n", roots[1]);
+			printf("\tX1: %8g\n\t*Only One Root\n", roots[1]);
 		}else{
-			printf("The Roots are:\n\t%f\n\t%f\n", roots[1], roots[2]);
+			printf("\tX1: %8g\n\tX2: %8g\n", roots[0], roots[1]);
 		}
 	}else if(ret == 1) // Result is imaginary
 	{

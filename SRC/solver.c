@@ -6,7 +6,7 @@ double computeDMachEps(void);
 // Prints the result to screen. 
 // Returns 0 when no issues. Returns 1 when result is imaginary.
 // Returns 2 for any other issues.
-int solve(double a, double b, double c, int *nRoots, double *result[2]){
+int solve(double a, double b, double c, int *nRoots, double *result){
 	int ret = 0;
 // Solving -b+-sqrt(b^2-4ac)/2a
 	double discriminant = (b*b) - 4*a*c;
@@ -15,7 +15,7 @@ int solve(double a, double b, double c, int *nRoots, double *result[2]){
 	double dmacheps = computeDMachEps(); // Used to calculate relative error between computed roots.
 	float temp; // Used to swap roots so that the most negative value is always the first value in the return array.
 
-
+	// printf("Recieved values: \n\ta: %f\n\tb: %f\n\tc: %f\n", a, b, c);
 	// If the result is non-real, we simply return and report that with the result value.
 	if(discriminant < 0){
 		logMessage("Result is non-real");
@@ -30,29 +30,32 @@ int solve(double a, double b, double c, int *nRoots, double *result[2]){
 			ret = 2;
 		}else{
 
-			printf("Calculated the discriminant to be %f,\nSquare Root of the Discriminant is: %f\n", discriminant, sqroot);
-			*result[0] = (-b - sqroot / 2*a);
-			*result[1] = (-b + sqroot / 2*a);
+			// printf("Calculated the discriminant to be %f,\nSquare Root of the Discriminant is: %f\n", discriminant, sqroot);
+			result[0] = ((-1*b - sqroot) / (2*a));
+			result[1] = ((-1*b + sqroot) / (2*a));
+
+			// printf("Calculated the root(s?) to be: \n\tX1: %8f\n\tX2: %8f\n", result[0], result[1]);
 
 
 			//Test if the two roots are within rounding error of each other. If so, only one root. Otherwise two roots.
-			if(fabs(*result[0] - *result[1])/ (fabs(*result[0])+fabs(*result[1])) < 10*dmacheps){
-				*result[0] = *result[1];
+			if(fabs(result[0] - result[1])/ (fabs(result[0])+fabs(result[1])) < 10*dmacheps){
+				result[0] = result[1];
 				*nRoots = 1;
-				sprintf(logString, "One Root: %8f\n", *result[0]);
+				sprintf(logString, "One Root: %8f\n", result[0]);
 			}else{
-			*nRoots = 2;
-				sprintf(logString, "Roots are: %8f, %8f\n", *result[0], *result[1]);
+				*nRoots = 2;
+				sprintf(logString, "Roots are: %8f, %8f\n", result[0], result[1]);
 				logMessage(logString);
+			// Now ensure that the most negative value is the first value in the array. 
+				if(result[0] > result[1]){
+					temp = result[0];
+					result[0] = result[1];
+					result[1] = temp;
+				}
 			}
 		}
 
-		// Now ensure that the most negative value is the first value in the array. 
-		if(*result[0] > *result[1]){
-			temp = *result[0];
-			*result[0] = *result[1];
-			*result[1] = temp;
-		}
+
 	}
 
 	free(logString);

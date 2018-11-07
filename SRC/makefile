@@ -18,7 +18,7 @@ input.o : quadSolver.h
 validate.o : quadSolver.h
 
 
-.PHONY : clean remake
+.PHONY : clean remake t1
 
 
 clean: 
@@ -27,3 +27,9 @@ clean:
 remake :
 	make clean
 	make
+
+t1 : 
+	./qs 2 5 -3 
+	echo "Should Have Given (-3, 0.5)"
+	./qs 2 4 2
+	echo "Should Have Given -1"
