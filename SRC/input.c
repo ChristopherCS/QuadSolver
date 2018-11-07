@@ -13,7 +13,7 @@ int input(int argc, char *argv[], char *values) //char *result)
    
     for (argc_counter = 1; argc_counter < argc;argc_counter++){ 
       if (strlen(values) + strlen(argv[argc_counter]) > 256){
-        return 1;            //overflow error
+        return 2;            //overflow error
       }else{
         strncat(values, argv[argc_counter], 80);    //80?! make it less, or whatever num it will be, it is still limited to the if condition
         strncat(values, " ", 1);

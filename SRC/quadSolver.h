@@ -12,6 +12,7 @@ void initLogfile(void);
 void logMessage(char *message);
 int validate(char *valuesString, double *result);
 int input(int argc, char *argv[], char *values);
+void errors(char *message);
 
 
 #endif
