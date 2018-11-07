@@ -28,7 +28,7 @@ int input(int argc, char *argv[], char *values) //char *result)
       return 0;
     }//
 
-    printf("Wrong amount of arguments. Expecting 3 floating numbers.");
+    //printf("Wrong amount of arguments. Expecting 3 floating numbers.");
    
    return 1;
 

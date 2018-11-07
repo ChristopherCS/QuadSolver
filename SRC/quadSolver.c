@@ -27,7 +27,7 @@ int main(int argc, char *argv[]){
 	//Validate Input
 	ret = validate(values, result);
 	if(ret != 0){
-	 	printf("Please enter valide values \n" );
+	 	printf("Please enter valid values \n" );
 	}
 	//Calculate X's
 

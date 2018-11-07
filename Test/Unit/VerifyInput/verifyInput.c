@@ -1,5 +1,9 @@
 // Verfies the Input and the Validate functions of the code
 // By Chris Carlson, Oct, 2018
+
+// NOTE: Compiling this test will cause a Divide By Zero Warning. I am generating a 
+// NAN by dividing by zero. Please ignore this warning as it is necesarry to test that
+// the program checks for NAN.
 #include "verifyInput.h"
 
 int main(void){
@@ -9,11 +13,12 @@ int main(void){
 	printf("About to test input.\n");
 	// Run input tests
 	ret += testInputCommandLine();
+	printf("Finished Testing Input.\n");
 
 	printf("About to test validation\n");
 	// Run validation tests
 	ret += testValidation();
-
+	printf("Finished Testing Validation\n");
 	return(ret);
 
 }
@@ -21,9 +26,8 @@ int main(void){
 
 int testInputCommandLine(){
 	int ret = 0;
-	char *result = (char *)calloc(sizeof(char), 128);	
-	int retval;
-	sprintf(result, "%f %f %f", 0.0000, 0.0000, 0.0000);
+	char *result = (char *)calloc(sizeof(char), 256);	
+	int retval, i;
 	cunit_init();
 	// Test input on command line for: 
 		// too few strings -- should return error.
@@ -36,9 +40,14 @@ int testInputCommandLine(){
 		assert_eq("Too Many Strings", retval, 1);
 		// correct number of strings should return one string equivalent to the three strings entered only with spaces between them
 		char *correctNStrings[4] = {"/input", "2.0", "3.0", "4.0"};
+		char *correctResult = (char *)calloc(sizeof(char), 256);
+		for(i=1; i<4; i++){
+			strncat(correctResult, correctNStrings[i] , 80);    //80?! make it less, or whatever num it will be, it is still limited to the if condition
+        strncat(correctResult, " ", 1);
+		}
 		retval = input(4, 	correctNStrings, result);
-		assert_streq("Correct Number Strings Given", "2 3 4", result);
-
+		assert_streq("Correct Number Strings Given", correctResult, result);
+	free(correctResult);
 	free(result);
 	return(ret);
 }
@@ -54,7 +63,7 @@ int testValidation(){
 	retval = validate(valuesString, values);
 	assert_neq("Passed Non-Numerical Value", retval, 0);
 	// Test NAN -- should fail
-	sprintf(valuesString,"%f %f %f", 1.2, 3.2, 10.0/0);
+	sprintf(valuesString,"%f %f %f", 1.2, 3.2, 10.0/0.0);
 	retval = validate(valuesString, values);
 	assert_neq("Passed \"NAN\"", retval, 0);
 	// Test +INF -- should fail
