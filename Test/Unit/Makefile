@@ -7,7 +7,7 @@
 #
 
 SRC= ../../SRC
-SUBDIR= mySquareRoot
+SUBDIR= mySquareRoot VerifyInput
 
 #Do all make files for all Unit tests
 tests: 

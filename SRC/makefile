@@ -1,9 +1,11 @@
 CC = gcc
 CFLAGS = -g -Wall -pedantic
 LIBS = -lm
+BUILD = ../Build/
 
 quadSolver : quadSolver.o mySquareRoot.o solver.o logger.o input.o validate.o errors.o
-	${CC} ${CFLAGS} -o qs quadSolver.o mySquareRoot.o input.o validate.o solver.o logger.o errors.o ${LIBS}
+	${CC} ${CFLAGS} -o qs quadSolver.o mySquareRoot.o input.o validate.o solver.o logger.o errors.o ${LIBS} 
+	cp qs ${BUILD}
 
 quadSolver.o : mySquareRoot.o logger.o solver.o input.o validate.o errors.o
 

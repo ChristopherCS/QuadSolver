@@ -3,6 +3,8 @@
 #include <string.h>
 #include "quadSolver.h"
 // to validate the values from the user input
+// This validates that the values passed are first, all numerical,
+// Then it checks that those values are not, NAN, INFINITY, and -INFINITY
 
 int validate (char *val, double *res){
   double a, b, c;

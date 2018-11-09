@@ -7,11 +7,12 @@
 
 
 int mySquareRoot(double input, double *output); 
-int solve(float a, float b, float c, int * nroots, float *result[2]); // The Result of this 
+int solve(double a, double b, double c, int * nroots, double *result); // The Result of this 
 void initLogfile(void);
 void logMessage(char *message);
 int validate(char *valuesString, double *result);
 int input(int argc, char *argv[], char *values);
+void errors(char *message);
 
 
 #endif
