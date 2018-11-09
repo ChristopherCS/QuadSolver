@@ -18,7 +18,7 @@ for file in $input_files; do
 	echo "Testing for $file"
 
 	#Run executable with given input
-	 ../../SRC/qs 'cat $file' &> out.txt
+	 ../../SRC/qs 'cat $file'  &> out.txt
 
 	#Check diff on output given by program, and expected output
 	if !(cmp -s out.txt ${output_files[0]}); then

@@ -62,10 +62,30 @@ int testValidation(){
 	sprintf(valuesString,"%f %f %s", 1.2, 3.2, "Beans");
 	retval = validate(valuesString, values);
 	assert_neq("Passed Non-Numerical Value", retval, 0);
+	// Test non-numerical value -- should return error
+	sprintf(valuesString,"%f %s %f", 1.2, "Beans", 3.2);
+	retval = validate(valuesString, values);
+	assert_neq("Passed Non-Numerical Value", retval, 0);
+	// Test non-numerical value -- should return error
+	sprintf(valuesString,"%s %f %f", "Beans", 3.2, 2.5);
+	retval = validate(valuesString, values);
+	assert_neq("Passed Non-Numerical Value", retval, 0);
+
 	// Test NAN -- should fail
 	sprintf(valuesString,"%f %f %f", 1.2, 3.2, 10.0/0.0);
 	retval = validate(valuesString, values);
 	assert_neq("Passed \"NAN\"", retval, 0);
+	// Test NAN -- should fail
+	sprintf(valuesString,"%f %f %f", 1.2, 10.0/0.0, 3.0);
+	retval = validate(valuesString, values);
+	assert_neq("Passed \"NAN\"", retval, 0);
+	// Test NAN -- should fail
+	sprintf(valuesString,"%f %f %f", 10.0/0.0, 3.0, 8.0);
+	retval = validate(valuesString, values);
+	assert_neq("Passed \"NAN\"", retval, 0);
+	
+	
+
 	// Test +INF -- should fail
 	sprintf(valuesString,"%f %f %f", 1.2, 3.2, INFINITY);
 	retval = validate(valuesString, values);
@@ -74,6 +94,7 @@ int testValidation(){
 	sprintf(valuesString,"%f %f %f", 1.2, 3.2, -INFINITY);
 	retval = validate(valuesString, values);
 	assert_neq("Passed \"-INFINITY\"", retval, 0);
+	
 	// Test three good floats -- Should return success.
 	sprintf(valuesString,"%f %f %f", 2.0, 4.0, 8.0);
 	retval = validate(valuesString, values);
