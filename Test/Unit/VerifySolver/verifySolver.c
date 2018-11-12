@@ -24,6 +24,8 @@ int testSolver(){
 	int nRoots;
 	double Results[2] = {0};
 	double *results = Results;
+	double rerr = 0.00000001; // 1.0e-8 Min Value for Floating Point
+	cunit_init();
 
 	// Test for imaginary roots (A=2, B=5, C=7)
 	retVal = solve(2.0, 5.0, 7.0, &nRoots, results);
@@ -43,8 +45,8 @@ int testSolver(){
 	retVal = solve(2.0, 4.0, -2.0, &nRoots, results);
 	assert_eq("Testing for two roots, Return Value of 0", 0, retVal);
 	assert_eq("Testing that 2 roots are indicated", nRoots, 2);
-	// assert_feqrerr("Testing a good root.", -2.414213, Results[0], cunit_dmacheps*10);
-	//assert_feqrerr("Testing a good root.", Results[1], 0.41421, cunit_dmacheps*10);
+	assert_feqrerr("Testing a good root.", -2.41421356, Results[0], rerr);
+	assert_feqrerr("Testing a good root.", 0.41421356, Results[1], rerr);
 	
 	return(ret);
 }
