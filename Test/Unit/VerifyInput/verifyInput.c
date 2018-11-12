@@ -10,15 +10,15 @@ int main(void){
 	int ret = 0;
 	
 
-	printf("About to test input.\n");
+	printf("\t***About to test input.\n");
 	// Run input tests
 	ret += testInputCommandLine();
-	printf("Finished Testing Input.\n");
+	printf("\t***Finished Testing Input.\n\n");
 
-	printf("About to test validation\n");
+	printf("\t***About to test validation\n");
 	// Run validation tests
 	ret += testValidation();
-	printf("Finished Testing Validation\n");
+	printf("\t***Finished Testing Validation\n\n");
 	return(ret);
 
 }

@@ -12,14 +12,17 @@ TESTINGSRC= ..
 
 
 verifySolver : verifySolver.o 
-	${CC} ${CFLAGS} -o t1 ${TESTINGSRC}/cunit.o ${SRCCODE}/solver.o verifySolver.o ${LIBS}
+	${CC} ${CFLAGS} -o t1 ${TESTINGSRC}/cunit.o ${SRCCODE}/solver.o verifySolver.o ${SRCCODE}/logger.o ${SRCCODE}/mySquareRoot.o ${LIBS}
 
-verifySolver.o : verifySolver.h ${TESTINGSRC}/cunit.o ${SRCCODE}/solver.o
+verifySolver.o : verifySolver.h ${TESTINGSRC}/cunit.o ${SRCCODE}/solver.o ${SRCCODE}/logger.o ${SRCCODE}/mySquareRoot.o
 
 cunit.o : ${TESTINGSRC}/cunit.h
 
 solver.o : ${SRCCODE}/quadSolver.h
 
+logger.o : ${SRCCODE}/quadSolver.h
+
+mySquareRoot.o : ${SRCCODE}/quadSolver.h
 
 
 test : verifyInput.o 

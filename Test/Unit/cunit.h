@@ -70,13 +70,13 @@ int cunit_init();
 #define assert_feqaerr(str,a,b,aerr) { \
   if( fabs(a - b) > aerr ) { \
     fprintf(cunit_log, "%s  LINE %d: %s, %24.16f !== %24.16f err=%10.6e\n", \
-              __FILE__ , __LINE__ , str , a , b , err); \
+              __FILE__ , __LINE__ , str , a , b , aerr); \
   } \
 }
 // eq subject to relative error
 // Perhaps it should check if a == b == 0.0 
 #define assert_feqrerr(str,a,b,rerr) { \
-  if( fabs(a - b)/(fabs(a) + fabs(b)) > rerr ) { \
+    if( fabs(a - b)/(fabs(a) + fabs(b)) > rerr ) { \
     fprintf(cunit_log, "%s  LINE %d: %s, %24.16f !>= %24.16f rerr=%10.6e\n", \
               __FILE__ , __LINE__ , str , a , b , rerr ); \
   } \

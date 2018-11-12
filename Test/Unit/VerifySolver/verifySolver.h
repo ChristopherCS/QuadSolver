@@ -5,8 +5,8 @@
 
 #define VERIFY_SOLVER_HEADER_DEFINITION
 
-#include "cunit.h"
-#include "quadSolver.h"
+#include "../cunit.h"
+#include "../../../SRC/quadSolver.h"
 #include <math.h>
 
 int testSolver();
