@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include <math.h> 
+#include <string.h>
 
 extern FILE *cunit_log; 
 extern double cunit_dmacheps;
@@ -98,3 +99,13 @@ int cunit_init();
               __FILE__ , __LINE__ , str , a , b ); \
   } \
 }
+
+
+// Assert EQ for doing string compare
+#define assert_streq(str, a, b){ \
+  if(strcmp(a, b)){ \
+    fprintf(cunit_log, "%s LINE %d: %s, %s !== %s\n", \
+            __FILE__, __LINE__, str, a, b); \
+  } \
+}
+

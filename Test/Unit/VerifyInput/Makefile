@@ -7,29 +7,28 @@
 CFLAGS= -Wall -pedantic -std=c99
 CC= gcc
 LIBS= -lm
+SRCCODE= ../../../SRC
+TESTINGSRC= ..
 
 
 verifyInput : verifyInput.o 
-	${CC} ${CFLAGS} -o verifyInput cunit.o input.o validate.o verifyInput.o ${LIBS}
+	${CC} ${CFLAGS} -o t1 ${TESTINGSRC}/cunit.o ${SRCCODE}/input.o ${SRCCODE}/validate.o verifyInput.o ${LIBS}
 
-verifyInput.o : verifyInput.h cunit.o input.o validate.o
+verifyInput.o : verifyInput.h ${TESTINGSRC}/cunit.o ${SRCCODE}/input.o ${SRCCODE}/validate.o
 
-cunit.o : cunit.h
+cunit.o : ${TESTINGSRC}/cunit.h
 
-input.o : quadSolver.h
+input.o : ${SRCCODE}/quadSolver.h
 
-validate.o : quadSolver.h
+validate.o : ${SRCCODE}/quadSolver.h
 
 
 test : verifyInput.o 
-	./verifyInput verifyInput.log 
+	./t1
 	
 
-.PHONY : prepTest clean
+.PHONY : clean
 
 clean : 
-	rm *.o verifyInput
+	rm *.o t1
 
-prepTest :
-	cp ../../../SRC/input.c ../../../SRC/validate.c ../../../SRC/quadSolver.h ./
-	make verifyInput
