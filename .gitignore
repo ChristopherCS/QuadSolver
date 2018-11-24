@@ -5,3 +5,6 @@
 **/verifyInput
 **/a.out
 **/*.swp
+**/*.t1
+**/*.t2
+**/qsolve
