@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-
+int logging;
 
 int mySquareRoot(double input, double *output); 
 int solve(double a, double b, double c, int * nroots, double *result); // The Result of this 

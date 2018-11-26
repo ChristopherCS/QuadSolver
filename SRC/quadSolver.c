@@ -18,6 +18,8 @@ int main(int argc, char *argv[]){
  	double result [3];
 	double roots[2] = {0, 0};
 	int nRoots;
+	logging = 0;
+
 
 	//Get Input
 	if ((ret = input(argc, argv, values))){
@@ -27,6 +29,11 @@ int main(int argc, char *argv[]){
 			case 1:
 				errors("Invalid input.\nUsage: './qs <float> <float> <float>' or './qs'\n");
 		}
+	}
+
+		if(logging){
+		initLogfile();
+		logMessage("Logging Turned On\n");
 	}
 	//Validate Input
 	ret = validate(values, result);

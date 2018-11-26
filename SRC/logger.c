@@ -14,7 +14,7 @@ void initLogfile(void){
   timeStruct = gmtime(&now);
   strftime(timeStamp, sizeof(timeStamp), "%Y-%m-%d %H:%M:%S", timeStruct);
 
-  fprintf(logFile, "%s: %s\n", timeStamp, "Log File Initialized.]\n");
+  fprintf(logFile, "%s: %s\n", timeStamp, "Log File Initialized.\n");
 
   fclose(logFile);
 }

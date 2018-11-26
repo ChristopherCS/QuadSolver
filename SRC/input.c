@@ -5,12 +5,16 @@
 // to validate the values from the user input
 //int validate (char val[], double result[]);
 
+
+
 int input(int argc, char *argv[], char *values) //char *result)
 {
    int argc_counter;
    
-   if (argc == 4){
-   
+   if (argc == 4 || (argc == 5 && !strcmp(argv[4],"l"))){
+    
+    if(!strcmp(argv[4], "l")) logging = 1;
+
     for (argc_counter = 1; argc_counter < argc;argc_counter++){ 
       if (strlen(values) + strlen(argv[argc_counter]) > 256){
         return 2;            //overflow error

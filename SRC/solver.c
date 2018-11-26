@@ -18,7 +18,7 @@ int solve(double a, double b, double c, int *nRoots, double *result){
 	// printf("Recieved values: \n\ta: %f\n\tb: %f\n\tc: %f\n", a, b, c);
 	// If the result is non-real, we simply return and report that with the result value.
 	if(discriminant < 0){
-		logMessage("Result is non-real");
+		if(logging) logMessage("Result is non-real");
 		ret = 1;
 
 		// else we complete the calculation.
@@ -26,7 +26,7 @@ int solve(double a, double b, double c, int *nRoots, double *result){
 		// If True, there was an error. Otherwise the
 		// Result of the square root function is in sqroot.
 		if(mySquareRoot(discriminant, &sqroot)){
-			logMessage("Error Occurred in Square Root Function.");
+			if(logging)	logMessage("Error Occurred in Square Root Function.");
 			ret = 2;
 		}else{
 
@@ -45,7 +45,7 @@ int solve(double a, double b, double c, int *nRoots, double *result){
 			}else{
 				*nRoots = 2;
 				sprintf(logString, "Roots are: %8f, %8f\n", result[0], result[1]);
-				logMessage(logString);
+				if(logging) logMessage(logString);
 			// Now ensure that the most negative value is the first value in the array. 
 				if(result[0] > result[1]){
 					temp = result[0];

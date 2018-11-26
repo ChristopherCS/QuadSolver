@@ -13,7 +13,7 @@ int mySquareRoot(double input, double *output){
 
 		//Creates the Log Message with sprintf.
 		sprintf(logString, "Function \"mySquareRoot\" Called with input: %f, and output: %f", input, *output);
-		logMessage(logString);
+		if(logging) logMessage(logString);
 	}
 
 	free(logString);
