@@ -29,9 +29,16 @@ int main(int argc, char *argv[]){
 		}
 	}
 	//Validate Input
-	if (validate(values, result))
-	 	errors("Entered invalid values. Please provide 3 valid floating numbers.\n");
+	ret = validate(values, result);
+	switch(ret){
+		case 1:
+	 		errors("Entered invalid values. Please provide 3 valid floating numbers.\n");
+			 break;
+		case 2:
+			errors("Not a true quadratic.\n");
+			break;
 	//Calculate X's (If there haven't been any errors yet)
+	}
 
 	if((ret = solve(result[0], result[1], result[2], &nRoots,roots))){
 		//Error

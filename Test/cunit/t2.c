@@ -62,8 +62,8 @@ assert_eq(str, ret , 1);
 // qsolve_roots() passes this one. ;-)
 // This allows about one base 10 least significant digit of error
 // (x - x1)*(x - x2) = 0
-x1 = 3.1;
-x2 = 3.3;
+x1 = 3.3;
+x2 = 3.1;
 a = coefs.a = 1.0;
 b = coefs.b = -x1 + -x2;
 c = coefs.c = x1*x2;
@@ -76,8 +76,8 @@ mock_setup_qsolve_sqrt( d, sqrtd, cunit_dmacheps*2.0*d);
 //
 ret = qsolve_roots(&coefs, &roots);
 assert_eq("ret",ret,2);
-assert_feqrerr("x1",roots.x1, x2, 2.0*cunit_dmacheps*3.3 );
-assert_feqrerr("x2",roots.x2, x1, 2.0*cunit_dmacheps*3.1 );
+assert_feqrerr("x1",roots.x1, x1, 2.0*cunit_dmacheps*3.3 );
+assert_feqrerr("x2",roots.x2, x2, 2.0*cunit_dmacheps*3.1 );
 //
 ret= mock_check_qsolve_sqrt( &count, &x);
 snprintf(str, 99, "count ret = %d x =%20.61e", count, x);

@@ -15,19 +15,23 @@ int validate (char *val, double *res){
   res[0] = a;
   res[1] = b;
   res[2] = c;
-
-  for(i=0; i<3; i++){
-    // Test for NAN
-    if(res[i] != res[i]){
-      ret = 1;
-    }
-    // Test for Infinity
-    if(res[i] == INFINITY){
-      ret = 1;
-    }
-    // Test for Negative Infinity
-    if(res[i] == -INFINITY){
-      ret = 1;
+  // Not a true quadratic
+  if(a == 0){
+    ret = 2;
+  }else {
+    for(i=0; i<3; i++){
+      // Test for NAN
+      if(res[i] != res[i]){
+        ret = 1;
+      }
+      // Test for Infinity
+      if(res[i] == INFINITY){
+        ret = 1;
+      }
+      // Test for Negative Infinity
+      if(res[i] == -INFINITY){
+        ret = 1;
+      }
     }
   }
   // printf("A is: %f\n", a);
