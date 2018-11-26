@@ -13,7 +13,9 @@ int input(int argc, char *argv[], char *values) //char *result)
    
    if (argc == 4 || (argc == 5 && !strcmp(argv[4],"l"))){
     
-    if(!strcmp(argv[4], "l")) logging = 1;
+    if(argc == 5){
+      if(!strcmp(argv[4], "l")) logging = 1;
+    }
 
     for (argc_counter = 1; argc_counter < argc;argc_counter++){ 
       if (strlen(values) + strlen(argv[argc_counter]) > 256){
@@ -25,7 +27,10 @@ int input(int argc, char *argv[], char *values) //char *result)
     } 
     return 0;
     //printf("The values are in input: %s\n", values); 
-   }else if(argc == 1){
+   }else if(argc == 1 || (argc == 2 && !strcmp(argv[1], "l"))){
+     if(argc ==2){
+       if(!strcmp(argv[1], "l")) logging = 1;
+     }
       printf("Enter the values for A, B, C:\n" );
       scanf("%[^\n]%*c",values);  // or we can use fgets, difference between value , &value
       //printf("The values are: %s\n", values);

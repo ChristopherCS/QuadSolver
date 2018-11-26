@@ -1,6 +1,6 @@
 #include "quadSolver.h"
 
 void errors(char *message) {
-	fprintf(stderr, message);
+	fprintf(stderr, "%s", message);
 	exit(0);
 }
