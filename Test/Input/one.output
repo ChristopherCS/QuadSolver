@@ -1,2 +1,1 @@
-Invalid input.
-Usage: './qs <float> <float> <float>' or './qs'
+Entered invalid values. Please provide 3 valid floating numbers.
