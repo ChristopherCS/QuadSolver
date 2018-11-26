@@ -3,25 +3,29 @@
 #Directory path name
 inputPath='../Input'
 
-#Get number of files
-cd $inputPath
-input_files="$(ls $dir | grep input)"
-output_files="$(ls $dir | grep output)"
-i=0
+
+input_files=(one.input two.input)
+output_files=(one.good.output two.good.output)
 
 #Run Make file to create executable
 #../../SRC/make
 
-echo "${output_files[0]}"
 
-for file in $input_files; do
-	echo "Testing for $file"
+
+for i in `seq 0 1`; do
+#	echo "Loop #$i" 
+	inFile="../Input/${input_files[$i]}"
+	outFile="../Input/${output_files[$i]}"
+#	echo $inFile
+	echo "Testing for $inFile"
 
 	#Run executable with given input
-	 ../../SRC/qs 'cat $file'  &> out.txt
+	 ../../SRC/qs `cat $inFile
+`  &> out.txt 
 
 	#Check diff on output given by program, and expected output
-	if !(cmp -s out.txt ${output_files[0]}); then
-		echo "Difference in test $file"
+	if !(diff out.txt $outFile); then
+		echo "Difference in test ${input_files[$i]}"
 	fi
+#	echo "Ending Loop #$i"
 done
