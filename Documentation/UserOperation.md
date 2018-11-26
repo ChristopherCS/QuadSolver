@@ -9,5 +9,6 @@ Run the program with the arguments on the command line like this:
 During runtime, if no arguments are supplied, user will see the following prompt:
 Enter the values for A, B, C:
 The user just enters three values on the command line and the program will output the result. It should appear like this:
-Enter the values for A, B, C: <value 1> <value 2> <value 3>
+Enter the values for A, B, C:
+<value 1> <value 2> <value 3>
 
