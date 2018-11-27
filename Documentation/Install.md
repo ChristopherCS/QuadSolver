@@ -1,4 +1,4 @@
-##Installation
+## Installation
 **1. Navigate to the SRC folder and type "make"
 2. Copy the file 'qs' to any location you want to use it...
 3. or just type ./qs to run.**
