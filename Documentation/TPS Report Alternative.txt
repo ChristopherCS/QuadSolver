@@ -1,0 +1,384 @@
+Tue Sep 18 18:08:13 2018 -0400
+Chris Carlson
+Initial Commit. These are the folders professor Kapenga wants us to have. I also included the notes I took in class in the standards directory in a file called "instructions.txt"
+
+
+
+Wed Sep 19 11:33:28 2018 -0400
+Chris Carlson
+Created the Directories and added a readme for each one.
+
+
+
+Mon Sep 24 11:35:53 2018 -0400
+Chris Carlson
+Updated the Instructions with a few additions from class today.
+
+
+
+Mon Oct 8 12:30:41 2018 -0400
+Chris Carlson
+Writing the Stories for the project. Not Yet Complete.
+
+
+
+Wed Oct 10 12:07:54 2018 -0400
+Chris Carlson
+Added the TPS report to Documentation.
+
+
+
+Wed Oct 10 12:34:58 2018 -0400
+Chris Carlson
+Added Licence and Legal File. Updated Stories file. Stories is mostly complete. I need someone to review the stories because I feel there may be something I missed.
+
+
+
+Mon Oct 15 10:42:47 2018 -0400
+Chris Carlson
+Update Quad Solver Stories.md
+Corrected Spelling Error in the Stories Page.
+
+
+Mon Oct 15 10:47:07 2018 -0400
+Tyrna
+Standards Update
+
+
+
+Mon Oct 15 10:55:40 2018 -0400
+Tyrna
+Documentation Story
+
+
+
+Mon Oct 15 11:23:07 2018 -0400
+Tyrna
+quadSolver template
+
+
+
+Mon Oct 15 11:49:35 2018 -0400
+Chris Carlson
+Created an Interfaces Definition File. It's a first draft, you guys should probably look at it. But it's a start.
+
+
+
+Mon Oct 15 11:49:42 2018 -0400
+Chris Carlson
+Merge branch 'master' of https://github.com/ChristopherCS/QuadSolver
+
+
+
+Thu Oct 18 14:41:12 2018 -0400
+Chris Carlson
+Created a MakeFile - functional. Crated quadsolver.h - functional (We should put all includes and function prototypes here.). Created mySquareRoot.c with function. Wrote the "solve" function in quadSolver.c which should solve the quadratic equation.
+
+
+
+Thu Oct 18 14:44:32 2018 -0400
+Chris Carlson
+Added .gitignore and removed the .vscode folder.
+
+
+
+Sun Oct 28 18:59:56 2018 -0400
+Tyrna
+Added Spikes & Test Directories
+
+
+
+Mon Oct 29 14:50:50 2018 -0400
+Chris Carlson
+Created logging methods. One Method 'initLogfile' is required at the start of the program to initiate a clean log file. The other method 'logMessage' is passed a string with the message to log. This message is timestamped and logged in the file.
+
+
+
+Mon Oct 29 14:52:25 2018 -0400
+Chris Carlson
+Fixed makefile
+
+
+
+Mon Oct 29 15:19:01 2018 -0400
+Chris Carlson
+Updated the Version Control Standard
+
+
+
+Mon Oct 29 15:36:39 2018 -0400
+Chris Carlson
+Updated the 'solve' function. It now takes two additional arguments, a pointer to an int nRoots and a pointer to a float array of length 2 result. nRoots will be populated by the number of roots found, and the array of length two will be populated with one or two roots upon success.
+
+
+
+Tue Oct 30 10:08:59 2018 -0400
+Chris Carlson
+Fixed a bit of logic in the solver program, and I fixed the make file. And I changed a file name, I had misnamed 'mySquareRoot.c' as 'mySqareRoot.c'.
+
+
+
+Tue Oct 30 10:33:27 2018 -0400
+Chris Carlson
+Fixed the solve program again. Now we can be sure that the MOST NEGATIVE result will be the first result in results array. This will help with testing.
+
+
+
+Wed Oct 31 13:53:30 2018 -0400
+Mariam
+Added input .c, still working on it.
+
+
+
+Wed Oct 31 14:09:09 2018 -0400
+Chris Carlson
+Added function prototypes to .h file.
+
+
+
+Wed Oct 31 14:10:53 2018 -0400
+Chris Carlson
+Merge branch 'Mariam' of https://github.com/ChristopherCS/QuadSolver
+
+
+
+Wed Oct 31 14:13:10 2018 -0400
+Mariam
+Merge branch 'master' of https://github.com/ChristopherCS/QuadSolver into Mariam
+Updating the branch
+
+
+
+Thu Nov 1 13:30:51 2018 -0400
+Chris Carlson
+Setup unit tests for the Validate method. Have not tested the tests yet. Will Do Soon...
+
+
+
+Thu Nov 1 14:13:42 2018 -0400
+Chris Carlson
+The input and verification tests are complete and they run. Currently they do not pass, as expected. Notice that in order to test them you have to run 'make prepTest', then 'make', then './verifyInput'.
+
+
+
+Thu Nov 1 17:30:29 2018 -0400
+Chris Carlson
+created a spike for testing for NAN.
+
+
+
+Mon Nov 5 00:48:12 2018 -0500
+Mariam
+input, main and validate
+
+
+
+Mon Nov 5 12:12:48 2018 -0500
+Mariam
+Finished Input and Validate fuunctions.
+
+
+
+Mon Nov 5 12:14:57 2018 -0500
+Mariam
+Merge branch 'Mariam' of https://github.com/ChristopherCS/QuadSolver into Mariam
+
+
+
+Mon Nov 5 12:25:51 2018 -0500
+Mariam
+Fixed Merge Conflicts
+
+
+
+Mon Nov 5 14:53:18 2018 -0500
+Chris Carlson
+Minor Change
+
+
+
+Mon Nov 5 15:05:33 2018 -0500
+Chris Carlson
+Got input and validation tests running. Not all pass (most do though). Fixed a minor bug in verification function.
+
+
+
+Wed Nov 7 10:18:11 2018 -0500
+Chris Carlson
+Updated the 'validate' function to test for NAN, INFINITY, and -INFINITY. Got all the tests for the input and validate functions working properly. All tests are passing. Yay!
+
+
+
+Wed Nov 7 11:03:56 2018 -0500
+Chris Carlson
+Working on main. Main compiles but segfaults. Problem is in the Solve function. Just pushing to save my progress.
+
+
+
+Wed Nov 7 12:23:52 2018 -0500
+Tyrna
+Changed SRC and Test
+
+
+
+Wed Nov 7 12:46:42 2018 -0500
+Chris Carlson
+Quad Solver works. Just needs final testing.
+
+
+
+Wed Nov 7 12:51:36 2018 -0500
+Chris Carlson
+Fixed merge conflicts.
+
+
+
+Wed Nov 7 13:04:20 2018 -0500
+Chris Carlson
+Okay, everything appears to be working. Needs testing for the Solve function.
+
+
+
+Fri Nov 9 12:22:19 2018 -0500
+Chris Carlson
+Made a few changes...
+
+
+
+Fri Nov 9 12:45:44 2018 -0500
+Chris Carlson
+added some tests.
+
+
+
+Mon Nov 12 09:33:40 2018 -0500
+Chris Carlson
+Added a stringEq test function to cunit, Updated the makefile for verifyInput, and stubbed out tests for the solver function.
+
+
+
+Mon Nov 12 10:17:27 2018 -0500
+Chris Carlson
+Created tests for the solver function. Getting an error when I try to use feqrerr. Not sure why...
+
+
+
+Mon Nov 12 11:37:59 2018 -0500
+Chris Carlson
+Added a few more tests. Working on the Makefile.
+
+
+
+Sat Nov 24 17:53:57 2018 -0500
+Chris Carlson
+updated .gitignore
+
+
+
+Mon Nov 26 09:56:04 2018 -0500
+Chris Carlson
+Automated all the unit tests (Run make runTest in the 'Unit' folder to run all unit tests.)
+
+
+
+Mon Nov 26 10:29:29 2018 -0500
+Chris Carlson
+Fixed the functional test script. It works. We need to write a some more functional tests.
+
+
+
+Mon Nov 26 10:53:33 2018 -0500
+Chris Carlson
+Still working on functional testing script...
+
+
+
+Mon Nov 26 12:13:34 2018 -0500
+Chris Carlson
+Fixed a div by zero problem.
+
+
+
+Mon Nov 26 12:31:35 2018 -0500
+Chris Carlson
+Created a logging switch.
+
+
+
+Mon Nov 26 13:02:28 2018 -0500
+Chris Carlson
+Added some documentation, and fixed the logging to work all the time.(and not segfault).
+
+
+
+Mon Nov 26 13:03:12 2018 -0500
+Chris Carlson
+Added some documentation, and fixed the logging to work all the time.(and not segfault).
+
+
+
+Mon Nov 26 18:19:06 2018 -0500
+Tyrna
+Added inf spike
+
+
+
+Mon Nov 26 19:10:09 2018 -0500
+Mariam
+Validate spike
+
+
+
+Mon Nov 26 19:11:44 2018 -0500
+Tyrna
+Added more func tests
+
+
+
+Mon Nov 26 19:12:04 2018 -0500
+Tyrna
+Merge branch 'master' of https://github.com/ChristopherCS/QuadSolver
+
+
+
+Mon Nov 26 19:22:06 2018 -0500
+Tyrna
+added more tests
+
+
+
+Mon Nov 26 19:52:56 2018 -0500
+Tyrna
+More documentations
+
+
+
+Mon Nov 26 19:58:45 2018 -0500
+Tyrna
+Updated Readme
+
+
+
+Mon Nov 26 19:59:47 2018 -0500
+Tyrna
+Changes in readme of standard
+
+
+
+Mon Nov 26 20:08:02 2018 -0500
+Tyrna
+Started IEEE doc
+
+
+
+Mon Nov 26 20:22:38 2018 -0500
+Mariam
+Absolute & Relative test
+
+
+
+Tue Nov 27 13:06:36 2018 -0500
+Chris Carlson
+Updated the Readme for the tests folder.
+
+
