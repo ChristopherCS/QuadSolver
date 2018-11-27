@@ -1,0 +1,1 @@
+This directory will hold all documents for standards utilized within our program.
