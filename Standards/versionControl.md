@@ -13,7 +13,9 @@ Be sure to pull the repository before you push. Really, pull before you do any n
  "<<<<<<< HEAD:nameOfTheFile.txt
  ONE SET OF CHANGES HERE
  \===========
+ 
 ANOTHER SET OF CHANGES HERE
+
  \>>>>>>>> 77976da35a11db4580b80ae27e8d65caf5208086:nameOfTheFile.txt	
  
 Your job is to decide how the code should look. Usually this is pretty simple. You just have to decide where your changes should be, and where the other changes should be. Once you have fixed the file, save it, add the changes to git, commit the changes to git, and then you are ready to push the changes to git. 
