@@ -1,1 +1,1 @@
-The Stories Folder Should Include Stories and Spikes.
+The Stories Folder Should Include Stories documents
